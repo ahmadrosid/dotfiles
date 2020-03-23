@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ZSHRC=$HOME/.zshrc
+ZSHRC=$HOME/.config/zsh/.zshrc
 if [ -f "$ZSHRC" ]; then
     if [ -f "$HOME/.config/zsh/.zshrc" ];  then
 	ZSHRC=$HOME/.config/zsh/.zshrc
