@@ -1,4 +1,5 @@
 #!/bin/bash
+alias n='cd $HOME/github/KWRI/contact-v2/'
 
 alias php=php73
 alias c='clear'
@@ -14,14 +15,14 @@ alias vf='vim $(fzf)'
 alias codef='code $(fzf)'
 alias rs='source $OCITRC_DIR/.ocitrc'
 alias w='cd $HOME/github/KWRI'
-alias sp='php -S localhost:8000 -t public'
+alias sp='php -S 127.0.0.1:8000 -t public'
 alias sp.='php -S localhost:8000'
 alias pf='php vendor/bin/phpunit --filter'
 alias pff='php-cs-fixer fix --using-cache=false --rules=@PSR2 $(fzf)'
 alias pt='php vendor/bin/phpunit --no-coverage $(find tests | fzf)'
 alias a='php artisan'
 alias m='php artisan migrate'
-alias pma='php -S localhost:2000 -t /usr/share/webapps/phpMyAdmin/ &'
+alias pma='php -S localhost:2000 -t /home/ahmadrosid/code/phpmyadmin &'
 alias rds='redis-server'
 alias open='xdg-open'
 alias gcon='node /home/ahmadrosid/github/KWRI/documents/scripts/google_connect.js'
@@ -40,7 +41,9 @@ alias glo='git log --oneline'
 alias nah='git reset --hard;git clean -df'
 alias ghm='cd $HOME/github/ahmadrosid'
 alias mc='moonc .'
-alias pma='php -S localhost:2000 -t  /usr/share/webapps/phpMyAdmin &'
 alias ad='add'
 alias audio="pactl list cards short | rofi -theme Pop-Dark -width 50 -dmenu -i -p select-sink | awk '{print $1}' | tr -d '\r\n'"
+alias ys='yarn build && yarn start'
+alias docker-ip='docker inspect -f "{{ .NetworkSettings.IPAddress }}"'
+
 

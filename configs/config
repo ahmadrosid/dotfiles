@@ -8,8 +8,8 @@
 
 # #---Basic Definitions---# #
 for_window [class="^.*"] border pixel 2
-gaps inner 17
-gaps outer 7
+gaps inner 10
+gaps outer 4
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 set $stoprec --no-startup-id dmenurecord kill
@@ -38,7 +38,7 @@ bar {
 	modifier None
 }
 
-assign				[class="time doctor" class="Time Doctor"] $ws3
+assign				[class="time doctor" class="Time Doctor"] $ws9
 for_window			[title="time doctor"] floating enable
 
 # #---Basic Bindings---# #
@@ -67,15 +67,16 @@ bindsym $mod+Insert		exec --no-startup-id showclip
 bindsym $mod+q			[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
 
-bindsym $mod+w			exec $term -e nmtui
-bindsym $mod+Shift+w		exec --no-startup-id $BROWSER
+bindsym $mod+Shift+w		exec $term -e nmtui
+bindsym $mod+w			exec --no-startup-id firefox
 
 bindsym $mod+e			exec $term -e neomutt && pkill -RTMIN+12 i3blocks
 bindsym $mod+Shift+e		exec --no-startup-id tutorialvids
 
 # bindsym $mod+space		exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -theme Pop-Dark -dmenu -lines 6 -width 400 -i -sort -p RUN'
 bindsym $mod+space			exec --no-startup-id rofi -theme Pop-Dark -show drun -lines 10 -width 600 -i -sort -p RUN
-bindsym $mod+d			exec --no-startup-id rofi -theme Pop-Dark -show run -lines 10 -width 600 -i -sort -p RUN
+bindsym $mod+r			exec --no-startup-id rofi -theme Pop-Dark -show run -lines 10 -width 600 -i -sort -p RUN
+bindsym $mod+d			exec --no-startup-id dmenu_run
 
 bindsym $mod+Shift+r		exec --no-startup-id winresize
 
