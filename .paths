@@ -2,4 +2,9 @@
 
 export PATH=$PATH:$HOME/go/bin
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=$PATH:$HOME/.config/composer/vendor/bin
+
+export DENO_INSTALL="/home/ahmadrosid/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 

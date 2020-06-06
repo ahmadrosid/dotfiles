@@ -1,5 +1,8 @@
 #!/bin/bash
-alias n='cd $HOME/github/KWRI/contact-v2/'
+alias n='cd $HOME/github/KWRI/contact-v2'
+alias yb='yarn build'
+alias ys='yarn start'
+alias yt='yarn test'
 
 alias php=php73
 alias c='clear'
@@ -23,11 +26,12 @@ alias pt='php vendor/bin/phpunit --no-coverage $(find tests | fzf)'
 alias a='php artisan'
 alias m='php artisan migrate'
 alias pma='php -S localhost:2000 -t /home/ahmadrosid/code/phpmyadmin &'
-alias rds='redis-server'
+alias rds='redis-cli flushall'
 alias open='xdg-open'
 alias gcon='node /home/ahmadrosid/github/KWRI/documents/scripts/google_connect.js'
 alias kwtok='node /home/ahmadrosid/github/KWRI/documents/scripts/get_access_token.js'
 alias gcl='git clone --recursive'
+alias gcoc='git ls-files | xargs cat | wc -l'
 alias gfo='git fetch origin'
 alias ggl='git pull origin $(current_branch)'
 alias gp='git push origin $(current_branch)'
@@ -43,7 +47,5 @@ alias ghm='cd $HOME/github/ahmadrosid'
 alias mc='moonc .'
 alias ad='add'
 alias audio="pactl list cards short | rofi -theme Pop-Dark -width 50 -dmenu -i -p select-sink | awk '{print $1}' | tr -d '\r\n'"
-alias ys='yarn build && yarn start'
 alias docker-ip='docker inspect -f "{{ .NetworkSettings.IPAddress }}"'
-
-
+alias rmf='rm $(fzf)'

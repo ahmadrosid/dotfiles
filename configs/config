@@ -4,12 +4,12 @@
 # You can set these variables in ~/.profile or ~/.bash_profile if you have it as below:
 #
 # export FILE="ranger"
-# export TERMINAL="st"
+# export TERMINAL="Terminator"
 
 # #---Basic Definitions---# #
 for_window [class="^.*"] border pixel 2
-gaps inner 10
-gaps outer 4
+gaps inner 0 # 10
+gaps outer 0 # 4
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 set $stoprec --no-startup-id dmenurecord kill
@@ -42,7 +42,7 @@ assign				[class="time doctor" class="Time Doctor"] $ws9
 for_window			[title="time doctor"] floating enable
 
 # #---Basic Bindings---# #
-bindsym $mod+Return 		exec $term
+bindsym $mod+Return 		exec terminator
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
 
 bindsym $mod+Shift+space 	floating toggle
@@ -67,7 +67,7 @@ bindsym $mod+Insert		exec --no-startup-id showclip
 bindsym $mod+q			[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
 
-bindsym $mod+Shift+w		exec $term -e nmtui
+bindsym $mod+Shift+w		exec st -e nmtui
 bindsym $mod+w			exec --no-startup-id firefox
 
 bindsym $mod+e			exec $term -e neomutt && pkill -RTMIN+12 i3blocks
@@ -95,7 +95,7 @@ bindsym $mod+Shift+i		exec --no-startup-id i3resize up
 bindsym $mod+o			sticky toggle
 bindsym $mod+Shift+o		exec --no-startup-id i3resize right
 
-bindsym $mod+p			exec --no-startup-id mpc toggle
+#bindsym $mod+p			exec --no-startup-id mpc toggle
 bindsym $mod+Shift+p		exec --no-startup-id mpc pause
 
 bindsym $mod+a			exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
@@ -272,7 +272,7 @@ bindsym $mod+Shift+bracketright exec --no-startup-id mpc seek +120
 
 # For screenshots and recording
 bindsym Print 			exec --no-startup-id maim pic-full-"$(date '+%y%m%d-%H%M-%S').png"
-bindsym Shift+Print 		exec --no-startup-id maimpick
+bindsym $mod+p	 		exec --no-startup-id maimpick
 bindsym $mod+Print		exec --no-startup-id dmenurecord
 bindsym $mod+Scroll_Lock	exec --no-startup-id "killall screenkey || screenkey"
 bindsym $mod+Delete		exec $stoprec
